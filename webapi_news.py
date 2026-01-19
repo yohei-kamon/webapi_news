@@ -9,6 +9,7 @@ for i in range(30):  # 30
 
     response_id = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
     id = response_id.json()[i]
+    time.sleep(1)  # ここで1秒止まる
     response = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{id}.json?print=pretty")
 
     dic = response.json()
