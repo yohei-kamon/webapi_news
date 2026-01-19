@@ -3,7 +3,7 @@ import requests
 
 dic_prt = {}
 
-for i in range(30):  # 後ほど30に変更する●
+for i in range(5):  # 後ほど30に変更する●
     time.sleep(1)  # ここで1秒止まる
 #    print(i)
 
@@ -12,23 +12,12 @@ for i in range(30):  # 後ほど30に変更する●
     response = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{id}.json?print=pretty")
 
     dic = response.json()
-    title = dic['title']
-    url = dic['url']
-
-    if url == "":
-        url = "None"
+    title = dic.get("title")
+    url = dic.get("url")
 
     dic_prt["title"] = title
     dic_prt["link"] = url
 
-#    print(id)
-#    print(f"{title} {url}")
     print(dic_prt)
-#    print(response.json())
-#    print(type(dic))
-
-# https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty  不要？？
-# https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty  top500
-
-
-# https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty
+    print(id)
+# 46636861
