@@ -3,7 +3,7 @@ import requests
 
 dic_prt = {}
 
-for i in range(5):  # 後ほど30に変更する●
+for i in range(30):  # 30
     time.sleep(1)  # ここで1秒止まる
 #    print(i)
 
@@ -19,5 +19,3 @@ for i in range(5):  # 後ほど30に変更する●
     dic_prt["link"] = url
 
     print(dic_prt)
-    print(id)
-# 46636861
